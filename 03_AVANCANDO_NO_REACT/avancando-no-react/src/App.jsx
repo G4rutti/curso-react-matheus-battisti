@@ -1,3 +1,6 @@
+import ManageData from './components/ManageData.jsx'
+import ListRender from './components/ListRender.jsx'
+
 import './App.css'
 
 import Neymar from './assets/neymar02.jpg'
@@ -13,6 +16,8 @@ function App() {
         {/* Imagem em asset*/}
         <img src={Neymar} alt="neymar" />
       </div>
+      <ManageData/>
+      <ListRender/>
     </div>
     
   )
