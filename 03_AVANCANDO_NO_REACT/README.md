@@ -132,5 +132,22 @@ export default ListRender
 * Isso é muito utilizado para modificar listar, pois temos o valor antigo e transformamos em um valor novo;
 * O primeiro argumento de um set sempre será o previous state.
 
+### Código do componente:
+```
+import { useState } from "react"
+const deleteRandom = () =>{
+  const [users, setUsers] = useState([
+    {id: 1, nome: "Nine"},
+    {id: 2, nome: "Tails"},
+    {id: 3, nome: "#9219"}
+  ])
+  const randomNumber = Math.floor(Math.random() * 3)
+
+  setUsers((prevUsers) => {
+    return prevUsers.filter((user) => randomNumber !== user.id)
+  })
+  }
+```
+
 ## Criando react-app pelo vite:
 `npm create vite@latest`
