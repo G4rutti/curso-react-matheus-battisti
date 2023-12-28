@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  color: red;
+}
+
+.red-title{
+  background-color: black;
+  color: red;
+  margin-top: 2vh;
+  border: gold 2px solid;
+}
+
+.title{
+  color: black;
+  background-color: gold;
+  margin-top: 2vh;
+  border: red 2px dotted;
+}

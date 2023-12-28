@@ -1,0 +1,24 @@
+.cardCars{
+    display: flex;
+    flex-direction: column;
+    padding: 3vw;
+    margin: 2vw;
+    border: 4px solid gold;
+    background-color: black;
+    color: white;
+}
+
+.cardCars h2{
+    text-align: center;
+}
+
+.cardCars li{
+    border-bottom: 2px solid gold;
+    margin-top: 2vh;
+    list-style: none;
+    text-align: center;
+}
+
+.cardCars ul{
+    margin-top: 2vh;
+}
