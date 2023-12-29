@@ -53,10 +53,10 @@ const Game = ({
           </div>
         </div>
         <div className="letterContainer">
-            <h2>Tente advinhar uma letra da palavra:</h2>
+            <h2>Tente adivinhar uma letra da palavra:</h2>
             <form onSubmit={handleSubmit}>
               <input type="text" name="letter" maxLength="1" required onChange={(e) => setLetter(e.target.value)} value={letter} ref={letterInputRef}/>
-              <button>Jogar</button>
+              <button>Adivinhar!</button>
             </form>
         </div>
       </div>
