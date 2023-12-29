@@ -1,4 +1,26 @@
-h2 span{
-    color: gold;
-    font-size: 1.5em;
+.endGame h1{
+    font-size: 3.5em;
+    color: #1F2E4B;
+    margin: 0;
+}
+
+.endGame{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 35vw;
+    height: 45vh;
+    border-radius: 20px;
+    box-shadow:  16px 16px 12px #93979d;
+}
+
+.endGame h2{
+    color: #ADB2B9;
+}
+
+.endGame span{
+    color: #1F2E4B;
 }

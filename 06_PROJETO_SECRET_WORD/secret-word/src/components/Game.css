@@ -1,3 +1,7 @@
+*{
+    color: #1F2E4B;
+}
+
 .game h1{
     font-size: 2.5em;
 }
@@ -7,29 +11,56 @@
 }
 
 .tip span{
-    color: gold;
+    color: #2B7DFA;
 }
 
 .wordContainer{
     margin: 2vw;
-    padding: 2vw;
-    border: 20px solid gold;
+    padding: 1.4vw;
     display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: auto;
+    border-radius: 20px;
+    box-shadow:  16px 16px 12px #93979d;
+}
+.wordContainer span{
+    margin: 1vw;
 }
 
 .letter, .blankSquare{
     font-size: 70px;
-    line-height: 1.5;
-    border: 3px solid black;
-    height: 100px;
-    width: 100px;
+    line-height: 1.7;
+    border: 3px solid #1F2E4B;
+    border-radius: 20px;
+    height: 15vh;
+    width: 7vw;
+    text-align: center;
     text-transform: uppercase;
     background-color: white;
     color: black;
     font-weight: bold;
 }
 
-.letterContainer p {
+
+.letterContainer{
+    display: flex;
+    margin: auto;
+    width: 20vw;
+    padding: 1.5vw;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+
+}
+.letterContainer h2 {
+    font-size: 1.1rem;
+    color: #1F2E4B;
     margin-bottom: 1.2em;
 }
 
@@ -40,9 +71,37 @@
 }
 
 .letterContainer input {
-    height: 50px;
-    width: 50px;
     font-size: 2em;
     margin-right: 2vw;
     text-align: center;
+    font-size: 70px;
+    border: 3px solid #1F2E4B;
+    border-radius: 20px;
+    height: 15vh;
+    width: 7vw;
+}
+
+.statsContainer{
+    display: flex;
+    margin: auto;
+    width: 20vw;
+    padding: 1.5vw;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+}
+.positiveStats h3{
+    margin-top: 1vh;
+}
+.negativeStats h3{
+    margin-top: 1vh;
+}
+
+.mainStats{
+    width: 50vw;
+    margin: auto;
+    display: flex;
 }
