@@ -1,6 +1,11 @@
 import "./StartScreen.css"
 
+import useSound from 'use-sound'
+import abertura from '../assets/sounds/abertura.mp3'
+
 const StartScreen = ({startGame}) => {
+  const [aberturaJogo] = useSound(abertura, {interrupt: true});
+  aberturaJogo()
   return (
     <div className="start">
         <h1>Secret Word</h1>

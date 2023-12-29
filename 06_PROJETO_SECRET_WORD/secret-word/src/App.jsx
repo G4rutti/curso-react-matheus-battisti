@@ -8,6 +8,12 @@ import './App.css'
 import {useCallback, useEffect, useState} from 'react'
 // Data
 import {wordsList} from './data/words.jsx'
+// Packges externos
+import useSound from 'use-sound'
+import acertou from './assets/sounds/resposta-correta-efeito-sonoro.mp3'
+import errou from './assets/sounds/som-de-resposta-errada.mp3'
+import derrota from './assets/sounds/title.mp3'
+
 
 const stages = [
   {id: 1, name: "start"},
@@ -17,6 +23,13 @@ const stages = [
 
 
 function App() {
+
+  // Sons:
+  const [acertouResposta] = useSound(acertou, {interrupt: true});
+  const [errouResposta] = useSound(errou, {interrupt: true})
+  const [perdeu] = useSound(derrota, {interrupt: true})
+
+
   const [gameStage, setGameStage] = useState(stages[0].name)
   const [words] = useState(wordsList)
 
@@ -29,6 +42,7 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(3)
   const [score, setScore] = useState(0)
+
 
   // funções para escolher:
   const pickWordAndCategory = useCallback(() => {
@@ -76,15 +90,20 @@ function App() {
 
     // Inserir letra ou remover chance:
     if(letters.includes(normalizedLetter)){
+      acertouResposta()
       setGuessedLetters((actualGuessedLetters) => [
         ...actualGuessedLetters, normalizedLetter
       ])
     }else{
       setWrongLetters((setWrongLetters) => [
         ...setWrongLetters, normalizedLetter
+        
       ])
 
       setGuesses((actualGuesses) => actualGuesses - 1)
+      if(guesses > 1){
+        errouResposta()
+      }
     }
 
     console.log(guessedLetters)
@@ -94,8 +113,8 @@ function App() {
   }
 
   const clearAllStates = () => {
-    setGuessedLetters([])
-    setWrongLetters([])
+      setGuessedLetters([])
+      setWrongLetters([])
   }
     
 
@@ -105,6 +124,7 @@ function App() {
       // resetar todos os estados:
       clearAllStates()
       setGameStage(stages[2].name)
+      perdeu()
     }
   }, [guesses])
 
