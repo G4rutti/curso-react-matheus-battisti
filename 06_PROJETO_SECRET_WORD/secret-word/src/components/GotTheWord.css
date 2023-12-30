@@ -1,0 +1,44 @@
+.contents img{
+    z-index: -1;
+    position: relative;
+    width: 70vw;
+    top: 10vh;
+}
+
+.contents .main{
+    margin: auto;
+}
+.contents{
+    width: 100vw;
+    height: 100vh;
+}
+
+.main{
+    bottom: 24vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 35vw;
+    height: 45vh;
+    padding: 2vw;
+    border-radius: 20px;
+    box-shadow:  16px 16px 12px #93979d;
+}
+
+.main h1{
+    font-size: 3.5em;
+    color: #1F2E4B;
+    margin: 0;
+}
+
+.main h2{
+    color: #ADB2B9;
+}
+
+.main span{
+    color: #1F2E4B;
+}

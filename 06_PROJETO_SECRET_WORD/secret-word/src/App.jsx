@@ -2,6 +2,7 @@
 import StartScreen from './components/StartScreen.jsx'
 import Game from './components/Game.jsx'
 import GameOver from './components/GameOver.jsx'
+import GotTheWord from "./components/GotTheWord.jsx"
 // CSS
 import './App.css'
 // React
@@ -13,12 +14,15 @@ import useSound from 'use-sound'
 import acertou from './assets/sounds/resposta-correta-efeito-sonoro.mp3'
 import errou from './assets/sounds/som-de-resposta-errada.mp3'
 import derrota from './assets/sounds/title.mp3'
+import abertura from './assets/sounds/abertura.mp3'
+
 
 
 const stages = [
   {id: 1, name: "start"},
   {id: 2, name: "game"},
   {id: 3, name: "end"},
+  {id: 4, name: "acertou"},
 ]
 
 
@@ -28,7 +32,7 @@ function App() {
   const [acertouResposta] = useSound(acertou, {interrupt: true});
   const [errouResposta] = useSound(errou, {interrupt: true})
   const [perdeu] = useSound(derrota, {interrupt: true})
-
+  const [aberturaJogo] = useSound(abertura, {interrupt: true})
 
   const [gameStage, setGameStage] = useState(stages[0].name)
   const [words] = useState(wordsList)
@@ -129,15 +133,24 @@ function App() {
   }, [guesses])
 
   // Checagem de vitória
-  useEffect(() => {
-    const uniqueLetters = [... new Set(letters)] // Deixa uma palavra com letras repetidas com uma letra só
-
-    // condição de vitória
-    if(guessedLetters.length === uniqueLetters.length){
+  const checkVictoryCondition = useCallback(() => {
+    const uniqueLetters = [...new Set(letters)];
+    if (guessedLetters.length === uniqueLetters.length) {
       setScore((actualScore) => actualScore += 100)
-      startGame()
+      setGameStage(stages[3].name);
+      
+    } 
+  }, [guessedLetters, letters, startGame]);
+  
+  // Checagem de vitória
+  useEffect(() => {
+    if (gameStage === stages[1].name) {
+      checkVictoryCondition();
     }
-  }, [guessedLetters, letters, startGame]) // Monitorando letters e start game só por viadagem
+  }, [checkVictoryCondition, gameStage, stages]);
+
+
+
 
   return (
     <div className='App'>
@@ -153,6 +166,7 @@ function App() {
       score={score}
       />}
       {gameStage === "end" && <GameOver resetGame={resetGame} score={score}/>}
+      {gameStage === "acertou" && <GotTheWord pickedWord={pickedWord} score={score} guesses={guesses} startGame={startGame}/>}
     </div>
   )
 }
