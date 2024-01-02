@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.formulario{
+    padding: 2vw;
+    border: 1px solid black;
+    margin: auto;
+    width: 20vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario form input{
+    margin-bottom: 2vh;
+}
