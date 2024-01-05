@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+}
+
+button{
+    padding: 2vw;
+}
