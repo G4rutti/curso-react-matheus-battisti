@@ -30,6 +30,10 @@ const Register = () => {
     const res = await createUser(user)
 
     console.log(res)
+    setDisplayName("")
+    setEmail('')
+    setPassword("")
+    setConfirmPassword("")
   }
   useEffect(() => {
     if(authError){
