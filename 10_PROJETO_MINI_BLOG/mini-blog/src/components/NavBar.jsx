@@ -42,7 +42,7 @@ const NavBar = () => {
                             className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/create_post"
+                            <NavLink to="/posts/create"
                             className={({ isActive }) => (isActive ? styles.active : "")}>Criar Post</NavLink>
                         </li>
                         <li>
