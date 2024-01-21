@@ -1,6 +1,6 @@
 import styles from './CreatePost.module.css'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from "../../context/AuthContext.jsx"
 import { useInsertDocument } from '../../hooks/useInsertDocument.jsx'
@@ -11,31 +11,51 @@ const CreatePost = () => {
   const [body, setBody] = useState("")
   const [tags, setTags] = useState([])
   const [formError, setFormError] = useState("")
+  const navigate = useNavigate()
 
   const {insertDocument, response} = useInsertDocument("posts")
   const {user} = useAuthValue()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
     setFormError('')
 
     // Validar URL da imagem
+    try {
+      new URL(image)
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.")
+      return
+    }
 
     // Criar o array de tags
+    const tagsArray = tags.split(',').map((tag) => tag.trim().toLowerCase())
 
     // Checar todos os valores
-    console.log(response)
-    insertDocument({
-      title,
-      image,
-      body,
-      tags,
-      uid: user.uid,
-      createdBy: user.displayName
-    })
+    if(!title || !image || !tags || !body){
+      setFormError("Por favor, preencha todos os campos!")
+      return
+    }
 
-    // Redirect to home page
+    try {
+      await insertDocument({
+        title,
+        image,
+        body,
+        tagsArray,
+        uid: user.uid,
+        createdBy: user.displayName,
+      });
+  
+      // Redirect to home page after the document is successfully inserted
+      navigate('/');
+    } catch (error) {
+      console.error('Error inserting document:', error.message);
+    }
   }
+  useEffect(() => {
+    console.log(response);
+  }, [response]);
 
   return (
     <div>
@@ -82,6 +102,8 @@ const CreatePost = () => {
         {!response.loading && <button className='btn'>Cadastrar</button>}
         {response.loading != null && <button className='btn' disabled>Aguarde...</button>}
         {response.error && <p className='error'>{response.error}</p>}
+        {formError && <p className='error'>{formError}</p>}
+
       </form>
     </div>
   )
