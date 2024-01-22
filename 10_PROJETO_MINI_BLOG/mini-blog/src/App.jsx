@@ -16,6 +16,7 @@ import Login from "./pages/Login/Login.jsx"
 import Register from "./pages/Register/Register.jsx"
 import Search from './pages/Search/Search.jsx'
 import Post from './pages/Post/Post.jsx'
+import EditPost from './pages/EditPost/EditPost.jsx'
 
 
 // Components
@@ -62,6 +63,8 @@ function App() {
                 <Route path='/search'
                 element={ <Search/> }/>
                 <Route path='/posts/:id' element={<Post/>}/>
+                <Route path='/posts/edit/:id' 
+                element={user? <EditPost/> : <Navigate to="/login"/> }/>
               </Routes>
             </div>
           <Footer />
