@@ -14,6 +14,9 @@ import CreatePost from './pages/CreatePost/CreatePost.jsx'
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Login from "./pages/Login/Login.jsx"
 import Register from "./pages/Register/Register.jsx"
+import Search from './pages/Search/Search.jsx'
+import Post from './pages/Post/Post.jsx'
+
 
 // Components
 import NavBar from "./components/NavBar.jsx"
@@ -56,6 +59,9 @@ function App() {
                 element={user ? <CreatePost/> :<Navigate to="/login"/>}/>
                 <Route path='/dashboard' 
                 element={user? <Dashboard/> : <Navigate to="/login"/>  }/>
+                <Route path='/search'
+                element={ <Search/> }/>
+                <Route path='/posts/:id' element={<Post/>}/>
               </Routes>
             </div>
           <Footer />
