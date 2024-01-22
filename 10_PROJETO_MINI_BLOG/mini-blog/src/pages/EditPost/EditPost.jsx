@@ -74,6 +74,7 @@ const EditPost = () => {
       console.error('Error inserting document:', error.message);
     }
   };
+
   return (
     <div className={styles.edit_post}>
       {post && (
