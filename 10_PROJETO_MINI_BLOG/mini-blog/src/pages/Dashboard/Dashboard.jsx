@@ -16,16 +16,17 @@ const Dashboard = () => {
 
   return (
     <div className='flex flex-col mx-auto'>
-      <div className='container w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20'>
+      <div className=' w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20'>
         <h2 className='my-10 text-center text-2xl font-bold uppercase text-slate-300'>Dashboard</h2>
         <p className='mb-10 text-center font-bold uppercase text-slate-500'>Gerencie os seus posts</p>
       </div>
       
       {loading && <p>Carregando...</p>}
       {posts && posts.length === 0 ? (
-        <div className={styles.noposts}>
-          <p>Não foram encontrados posts!</p>
-          <Link to='/posts/create' className='btn'>
+        <div className='flex flex-col justify-center mx-auto w-80vw my-10'>
+          <p className='text-center text-2xl font-bold uppercase mb-10'>Não foram encontrados posts!</p>
+          <Link to='/posts/create' className="w-50vw mx-auto mb-10 bg-slate-600 py-2 rounded-md hover:text-slate-900 transition-all duration-500 text-slate-200 text-center
+            md:w-44">
             Criar o primeiro post
           </Link>          
         </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="my-28 flex flex-col justify-center
+    <div className="my-28 flex flex-col justify-center min-h-60h
     md:mx-auto">
       <h2 className="font-bold text-2xl mb-5 text-slate-900
       md:mx-auto">

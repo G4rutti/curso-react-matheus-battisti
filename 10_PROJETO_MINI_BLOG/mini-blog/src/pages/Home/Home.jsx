@@ -22,8 +22,10 @@ const Home = () => {
   }
 
   return (
-    <>
-      <div className="container w-full mx-auto bg-slate-900 h-72 md:h-48 md:mb-20">
+    <main>
+      <div className="w-full bg-slate-900 h-72 md:h-48 
+      md:mb-20
+      lg:w-full">
         <h1 className="pt-10 text-2xl font-bold uppercase text-slate-400 text-center">Veja os nossos posts mais recentes</h1>
         <form onSubmit={handleSubmit} className="my-10 flex-col md:flex-row flex justify-center">
           <input type="text" placeholder="Ou busque por tags..." className="w-60 mx-auto  px-4 py-2 outline-none mb-4 rounded-lg
@@ -47,7 +49,7 @@ const Home = () => {
 
       </div>
       
-    </>
+    </main>
     
   )
 }

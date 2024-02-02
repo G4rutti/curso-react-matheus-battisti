@@ -17,7 +17,7 @@ import Register from "./pages/Register/Register.jsx"
 import Search from './pages/Search/Search.jsx'
 import Post from './pages/Post/Post.jsx'
 import EditPost from './pages/EditPost/EditPost.jsx'
-
+import NotFound from './pages/NotFound/NotFound.jsx'
 
 // Components
 import NavBar from "./components/NavBar.jsx"
@@ -44,12 +44,12 @@ function App() {
   }
 
   return (
-    <>
+    <div className='w-full'>
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <NavBar />
-            <div className="container">
               <Routes>
+                <Route path='*' element={<NotFound/>}/>
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
                 <Route path="/login" 
@@ -66,11 +66,10 @@ function App() {
                 <Route path='/posts/edit/:id' 
                 element={user? <EditPost/> : <Navigate to="/login"/> }/>
               </Routes>
-            </div>
           <Footer />
         </BrowserRouter>
       </AuthProvider>
-    </>
+    </div>
   )
 }
 

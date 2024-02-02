@@ -23,9 +23,10 @@ const Search = () => {
                     <PostDetail key={post.id} post={post}/>
                 ))}
                 {posts && posts.length === 0 && (
-                    <div>
-                        <p>Não foram encontrados posts a partir da sua busca</p>
-                        <Link to='/'>
+                    <div className='flex flex-col justify-center mx-auto w-80vw my-10'>
+                        <p className='text-center text-2xl font-bold uppercase mb-10'>Não foram encontrados posts a partir da sua busca</p>
+                        <Link className="w-30vw mx-auto my-2 bg-red-600 py-2 rounded-md hover:text-red-900 transition-all duration-500 text-slate-200 text-center
+                        md:w-20" to='/'>
                             Voltar
                         </Link>
                     </div>
