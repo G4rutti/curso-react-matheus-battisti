@@ -1,5 +1,3 @@
-import styles from './CreatePost.module.css'
-
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from "../../context/AuthContext.jsx"
@@ -58,48 +56,52 @@ const CreatePost = () => {
   }, [response]);
 
   return (
-    <div>
-      <h2>Criar post</h2>
-      <p>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Título</span>
+    <div className='flex flex-col justify-center mx-auto'>
+      <h2 className='mx-auto mt-10 mb-5 text-2xl font-bold uppercase text-slate-800'>Criar post</h2>
+      <p className='w-80vw mx-auto mb-10 text-slate-500'>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
+      <form onSubmit={handleSubmit} className='flex flex-col w-80vw mx-auto'>
+        <label className='flex flex-col '>
+          <span className='mb-2 '>Título</span>
           <input type="text" 
           name="title" 
           required 
           placeholder='Pense num bom título'
           onChange={(e) => (setTtile(e.target.value))}
-          value={title} />
+          value={title}
+          className='border border-slate-600 px-4 mb-5 py-3 placeholder-slate-600' />
         </label>
-        <label>
-          <span>URL da imagem</span>
+        <label className='flex flex-col '>
+          <span className='mb-2 '>URL da imagem</span>
           <input type="text" 
           name="image" 
           required 
           placeholder='Insira uma imagem que represente seu post'
           onChange={(e) => (setImage(e.target.value))}
-          value={image} />
+          value={image}
+          className='border border-slate-600 px-4 mb-5 py-3 placeholder-slate-600' />
         </label>
-        <label>
-          <span>Conteúdo</span>
+        <label className='flex flex-col '>
+          <span className='mb-2 '>Conteúdo</span>
           <textarea type="text" 
           name="image" 
           required 
           placeholder='Insira o conteúdo do seu post'
           onChange={(e) => (setBody(e.target.value))}
-          value={body}>
+          value={body}
+          className='border border-slate-600 px-4 mb-5 py-3 placeholder-slate-600'>
           </textarea>
         </label>
-        <label>
-          <span>Tags</span>
+        <label className='flex flex-col '>
+          <span className='mb-2 '>Tags</span>
           <input type="text" 
           name="image" 
           required 
           placeholder='Insira tags separadas por vírgulas'
           onChange={(e) => setTags(e.target.value)}
-          value={tags} />
+          value={tags}
+          className='border border-slate-600 px-4 mb-5 py-3 placeholder-slate-600' />
         </label>
-        {!response.loading && <button className='btn'>Cadastrar</button>}
+        {!response.loading && <button className='bg-slate-600 py-4 text-slate-300 mb-20 hover:text-slate-700 transition-all duration-500'>Cadastrar</button>}
         {response.loading != null && <button className='btn' disabled>Aguarde...</button>}
         {response.error && <p className='error'>{response.error}</p>}
         {formError && <p className='error'>{formError}</p>}
