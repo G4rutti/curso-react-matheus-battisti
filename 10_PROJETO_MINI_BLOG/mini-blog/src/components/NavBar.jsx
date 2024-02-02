@@ -23,7 +23,7 @@ const NavBar = () => {
             setButtonSair("mx-5 my-auto bg-red-600 py-2 px-4 rounded-md hover:text-red-900 transition-all duration-500")
         }else{
             setBar('fa-solid fa-x')
-            setShowMenu("col-span-2 flex-1 md:flex text-white  my-auto mr-5")
+            setShowMenu("col-span-2 flex-1 md:flex text-white  my-auto")
             setButtonSair("my-2 justify-center flex")
             setButtons("my-2 justify-center flex")
         }

@@ -9,9 +9,9 @@ const PostDetail = ({post}) => {
         md:w-40vw'/>
         <span className='border-slate-700 border w-70vw mx-auto mb-4
         md:w-30vw'></span>
-        <h2 className='w-70vw mx-auto h-auto text-wrap font-semibold mb-2
-        md:w-30vw md:text-center'>{post.title}</h2>
-        <p className='text-slate-500'>Criado por: {post.createdBy}</p>
+        <h2 className='w-70vw mx-auto h-auto text-wrap font-semibold mb-2 text-center
+        md:w-30vw '>{post.title}</h2>
+        <p className='text-slate-500 text-center'>Criado por: {post.createdBy}</p>
         <div className='flex w-70vw mx-auto mb-5 justify-center
         md:w-30vw'>
             {post.tags.map((tag) => (

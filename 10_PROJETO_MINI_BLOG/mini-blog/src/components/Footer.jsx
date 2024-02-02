@@ -1,8 +1,7 @@
-import styles from "./Footer.module.css"
 
 const Footer = () => {
   return (
-        <footer className={styles.footer}>
+        <footer className="h-40vh bg-slate-800 flex flex-col justify-center text-center text-slate-300">
             <h3>Escreva sobre o que você tem interesse!</h3>
             <p>Mini Blog &copy; 2023</p>
         </footer>
