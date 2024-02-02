@@ -37,13 +37,14 @@ const NavBar = () => {
                 </NavLink>
             </div>
             <div className="col-span-1 flex justify-end flex-1 md:hidden text-white text-3xl my-auto mr-5">
-                <i className={bar} onClick={showTheMenu}></i>
+                <i className={bar}></i>
             </div>
             <div className={showMenu}>
                 <ul  className='md:flex md:flex-row flex flex-col text-center mt-5 md:my-auto'>
                     <li className={buttons}>
                         <NavLink to="/"
-                        className={({ isActive }) => (isActive ? 'bg-slate-700 py-2 px-4 rounded-md' : "")}>Home</NavLink>
+                        className={({ isActive }) => (isActive ? 'bg-slate-700 py-2 px-4 rounded-md' : "")}
+                        onClick={() => (setMenu(!menu))}>Home</NavLink>
                     </li>
                     <li className={buttons}>
                         <NavLink to="/about"
