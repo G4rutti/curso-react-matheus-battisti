@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div className='w-full'>
+      
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <NavBar />

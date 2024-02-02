@@ -13,7 +13,7 @@ const Search = () => {
 
     return (
         <div className='flex flex-col justify-center'>
-            <div className='container w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20'>
+            <div className='w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20'>
                 <h2 className='my-10 flex flex-col mx-auto text-xl w-80vw uppercase font-bold text-slate-300
                 md:text-center'>Resultados apartir da busca por: <span className='lowercase text-center mt-5'>{search}</span></h2>
             </div>

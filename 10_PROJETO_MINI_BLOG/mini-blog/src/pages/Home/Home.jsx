@@ -41,9 +41,10 @@ const Home = () => {
           <PostDetail key={post.id} post={post}/>
         ))}
         {posts && posts.length === 0 && (
-          <div>
-            <p>Não foram encontrados posts</p>
-            <Link to='/posts/create' className="btn">Criar primeiro post</Link>
+          <div className="flex flex-col text-center my-20">
+            <p className="text-center text-2xl font-bold uppercase mb-10">Não foram encontrados posts</p>
+            <Link to='/posts/create' className="w-30vw mx-auto my-2 bg-slate-600 py-2 rounded-md hover:text-slate-900 transition-all duration-500 text-slate-200 text-center
+            md:w-20vw">Criar primeiro post</Link>
           </div>
         )}
 
