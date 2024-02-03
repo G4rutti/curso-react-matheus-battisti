@@ -59,7 +59,7 @@ function App() {
             <Route path='/search' element={<Search />} />
             <Route path='/posts/:id' element={<Post />} />
             <Route path='/posts/edit/:id' element={user ? <EditPost /> : <Navigate to="/login" />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path='/*' element={<NotFound />} />
           </Routes>
           <Footer />
         </BrowserRouter>
