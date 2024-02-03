@@ -20,7 +20,17 @@
                 "90vh": "90vh",
                 "100vh": "100vh",
 
-            }
+            },
+            animation: {
+                fadeIn: 'fadeIn 1s ease-in-out',
+              },
+              keyframes: (theme) => ({
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                
+              }),
         },
     },
     plugins: [],

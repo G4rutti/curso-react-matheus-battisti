@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <>
-      <div className='flex flex-col justify-center mx-auto'>
+      <div className='flex flex-col justify-center mx-auto animate-fadeIn'>
         <h1 className='mx-auto mt-10 mb-5 text-2xl font-bold uppercase text-slate-800'>Entrar</h1>
         <p className='w-80vw mx-auto mb-10 text-slate-500 text-center md:text-2xl'>Faça o seu login!</p>
         <form onSubmit={handleSubmit} className='flex flex-col w-80vw mx-auto'>

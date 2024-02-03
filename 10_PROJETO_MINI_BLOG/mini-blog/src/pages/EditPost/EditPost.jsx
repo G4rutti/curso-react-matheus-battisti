@@ -74,7 +74,7 @@ const EditPost = () => {
   };
 
   return (
-    <div className='flex flex-col justify-center mx-auto'>
+    <div className='flex flex-col justify-center mx-auto animate-fadeIn'>
       {post && (
         <>
           <h2 className='mx-auto mt-10 mb-5 text-2xl font-bold uppercase text-slate-800 text-center'>Editando post: {post.title}</h2>

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const PostDetail = ({post}) => {
   return (
-    <div className='container w-80vw flex flex-col mx-auto 
+    <div className='container w-80vw flex flex-col mx-auto animate-fadeIn
     md:w-40vw'>
         <img src={post.image} alt={post.title} className='w-80vw rounded-xl mb-5
         md:w-40vw'/>

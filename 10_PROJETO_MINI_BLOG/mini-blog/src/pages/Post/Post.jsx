@@ -11,7 +11,7 @@ const Post = () => {
             <p>Carregando post...</p>
         )}
         {post && (
-            <>
+            <div className="animate-fadeIn">
                 
                 <h1 className="my-10 text-2xl uppercase font-bold text-center">{post.title}</h1>
                 <div className="flex flex-col">
@@ -29,7 +29,7 @@ const Post = () => {
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )}
     </div>
   )
