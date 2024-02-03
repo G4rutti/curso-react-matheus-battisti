@@ -71,14 +71,18 @@ export const useAuthentication = () => {
             await signInWithEmailAndPassword(auth, data.email, data.password)
         } catch (error) {
             let systemErrorMessage;
-            if(error.message.includes("user-not-found")){
-                systemErrorMessage = "Usuário nao encontrado"
-            } else if (error.message.includes("wrong-password")){
-                systemErrorMessage = "Senha incorreta"
-            }else{
-                systemErrorMessage = "Ocorreu um erro, tente mais tarde"
-            }
+            console.log(error.code)
+            console.log(error.message)
+            // if(error.message.includes("user-not-found")){
+            //     systemErrorMessage = "Usuário nao encontrado"
+            // } else if (error.message.includes("wrong-password")){
+            //     systemErrorMessage = "Senha incorreta"
+            // }else{
+            //     systemErrorMessage = "Ocorreu um erro, tente mais tarde"
+            // }
+            systemErrorMessage = "Email ou senha inválidos"
             setError(systemErrorMessage)
+            setLoading(false)
         }
     }
     useEffect(() => {

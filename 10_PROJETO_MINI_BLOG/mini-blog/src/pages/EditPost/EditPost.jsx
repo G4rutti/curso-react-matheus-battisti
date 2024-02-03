@@ -125,8 +125,8 @@ const EditPost = () => {
             </label>
             {!response.loading && <button className='bg-slate-600 py-4 text-slate-300 mb-2 hover:text-slate-700 transition-all duration-500'>Atualizar</button>}
             {response.loading != null && <button className='bg-slate-600 py-4 text-slate-300 mb-2' disabled>Aguarde...</button>}
-            {response.error && <p className='bg-red-600 py-4 text-red-300 text-center mb-2'><i class="fa-solid fa-exclamation mr-3"></i>{response.error}</p>}
-            {formError && <p className='bg-red-600 py-4 text-red-300 text-center mb-2'><i class="fa-solid fa-exclamation mr-3"></i>{formError}</p>}
+            {response.error && <p className='bg-red-600 py-4 text-red-300 text-center mb-2'><i className="fa-solid fa-exclamation mr-3"></i>{response.error}</p>}
+            {formError && <p className='bg-red-600 py-4 text-red-300 text-center mb-2'><i className="fa-solid fa-exclamation mr-3"></i>{formError}</p>}
 
           </form>
         </>
