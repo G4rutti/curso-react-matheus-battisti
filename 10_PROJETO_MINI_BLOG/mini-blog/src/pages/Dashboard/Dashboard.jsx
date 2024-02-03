@@ -15,8 +15,8 @@ const Dashboard = () => {
   const { deleteDocument } = useDeleteDocument("posts")
 
   return (
-    <div className='flex flex-col mx-auto'>
-      <div className=' w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20 animate-fadeIn'>
+    <div className='flex flex-col mx-auto animate-fadeIn'>
+      <div className=' w-full mx-auto bg-slate-900 h-42 md:h-40 md:mb-20 '>
         <h2 className='my-10 text-center text-2xl font-bold uppercase text-slate-300'>Dashboard</h2>
         <p className='mb-10 text-center font-bold uppercase text-slate-500'>Gerencie os seus posts</p>
       </div>

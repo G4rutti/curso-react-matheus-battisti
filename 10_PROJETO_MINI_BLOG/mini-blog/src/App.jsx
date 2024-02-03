@@ -44,7 +44,7 @@ function App() {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-full animate-fadeIn'>
       
       <AuthProvider value={{ user }}>
         <BrowserRouter>

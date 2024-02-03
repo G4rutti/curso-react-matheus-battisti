@@ -94,9 +94,9 @@ const Register = () => {
           className='border border-slate-600 px-4 mb-5 py-3 placeholder-slate-600'
           />
         </label>
-        {!loading && <button className='bg-slate-600 py-4 text-slate-300 mb-20 hover:text-slate-700 transition-all duration-500'>Cadastrar</button>}
+        {!loading && <button className='bg-slate-600 py-4 text-slate-300 mb-2 hover:text-slate-700 transition-all duration-500'>Cadastrar</button>}
         {loading && <button className='bg-slate-600 py-4 text-slate-300 mb-20' disabled>Aguarde...</button>}
-        {error && <p className='error'>{error}</p>}
+        {error && <p className='bg-red-600 py-4 text-red-300 text-center mb-2'><i class="fa-solid fa-exclamation mr-3"></i>{error}</p>}
       </form>
     </div>
     
