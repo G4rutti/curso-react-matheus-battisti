@@ -23,7 +23,7 @@ const NavBar = () => {
             setButtonSair("mx-5 my-auto bg-red-600 py-2 px-4 rounded-md hover:text-red-900 transition-all duration-500")
         }else{
             setBar('fa-solid fa-x')
-            setShowMenu("col-span-2 flex-1 md:flex text-white  my-auto")
+            setShowMenu("col-span-2 flex-1 md:flex text-white my-auto")
             setButtonSair("my-2 justify-center flex")
             setButtons("my-2 justify-center flex")
         }
@@ -37,14 +37,14 @@ const NavBar = () => {
                 </NavLink>
             </div>
             <div className="col-span-1 flex justify-end flex-1 md:hidden text-white text-3xl my-auto mr-5">
-                <i className={bar}></i>
+                <i className={bar} onClick={showTheMenu}></i>
             </div>
             <div className={showMenu}>
                 <ul  className='md:flex md:flex-row flex flex-col text-center mt-5 md:my-auto'>
                     <li className={buttons}>
                         <NavLink to="/"
                         className={({ isActive }) => (isActive ? 'bg-slate-700 py-2 px-4 rounded-md' : "")}
-                        onClick={() => (setMenu(!menu))}>Home</NavLink>
+                        >Home</NavLink>
                     </li>
                     <li className={buttons}>
                         <NavLink to="/about"
